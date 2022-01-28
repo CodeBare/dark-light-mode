@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Kaushan+Script&family=Oswald&display=swap');
+
+html {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Comfortaa, sans-serif;
+}
+
+.slider {
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  right: 0;
+  height: 100%;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  background: #FFFFFF;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
 }
