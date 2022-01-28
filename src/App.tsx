@@ -1,6 +1,6 @@
 import {Box, Container, Switch, Typography} from "@mui/material";
 import {makeStyles} from "@mui/styles";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {ReactComponent as MobileLight} from './assets/undraw_mobile_development_light.svg';
 import {ReactComponent as MobileDark} from './assets/undraw_mobile_development_dark.svg';
 import {ReactComponent as SupportLight} from './assets/undraw_instant_support_light.svg'
@@ -179,6 +179,13 @@ const App = (props: any) => {
         theme: sTheme
     })
 
+    useEffect(() => {
+        const mode: string | null = localStorage.getItem('lightDarkMode')
+        if(Boolean(mode)) {
+            setTheme(mode as 'light' | 'dark')
+        }
+    }, [])
+
     return (
         <Container disableGutters className={classes.container}>
             <Box sx={{
@@ -199,7 +206,11 @@ const App = (props: any) => {
                     {sTheme === 'light' ? <LightMode /> : <DarkMode />}
                 </span>
                 <label className={classes.themeSwitch}>
-                    <input type={'checkbox'} checked={sTheme === 'light'} onClick={() => sTheme === 'light' ? setTheme('dark') : setTheme('light')} />
+                    <input type={'checkbox'} checked={sTheme === 'light'} onClick={() => {
+                        let theme: 'light' | 'dark' = sTheme === 'light' ? 'dark' : 'light'
+                        setTheme(theme)
+                        localStorage.setItem('lightDarkMode', theme)
+                    }} />
                     <div className={`${classes.slider} slider`}></div>
                 </label>
             </Box>
