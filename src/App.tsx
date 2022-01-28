@@ -1,4 +1,4 @@
-import {Box, Container, Switch, Typography} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
 import {makeStyles} from "@mui/styles";
 import {useEffect, useState} from "react";
 import {ReactComponent as MobileLight} from './assets/undraw_mobile_development_light.svg';
@@ -10,7 +10,6 @@ import {ReactComponent as TeachingDark} from './assets/undraw_teaching_light.svg
 import {DarkMode, Facebook, GitHub, Instagram, LightMode, LinkedIn, Twitter, YouTube} from "@mui/icons-material";
 
 const light_primary = '#ff5c5c'
-const light_primary_variant = '#ff2d2d'
 const light_secondary = '#1b9999'
 const light_onPrimary = 'rgb(250, 250, 250)'
 const light_onBackground = 'rgb(66, 66, 66)'
@@ -18,7 +17,6 @@ const light_onBackgroundAlt = 'rgba(66, 66, 66, 0.7)'
 const light_background = 'rgb(255, 255, 255)'
 const box_shadow = '0 5px 20px 1px rgba(0, 0, 0, 0.5)'
 const dark_primary = '#9641ff'
-const dark_primary_variant = '#6c63ff'
 const dark_secondary = '#03dac5'
 const dark_onPrimary = '#000000'
 const dark_onBackground = 'rgba(255, 255, 255, 0.9)'
